@@ -24,10 +24,18 @@ feature 'Starting a new game' do
   end
 
   scenario 'I am asked to enter a board coordinate' do
-    visit '/coordinate'
-    #click_link 'New Game'
+    visit '/new_game'
+    fill_in :name, with: 'Dave'
     click_on 'Submit'
+    click_link 'Enter game'
     expect(page).to have_content "Please enter board coordinate to shoot at:"
+  end
+
+  scenario 'should hit on the board' do
+    visit '/coordinate'
+    fill_in :coordinate, with: 'D4'
+    click_on 'Submit'
+    expect(page).to have_content "Miss!"
   end
 
 end

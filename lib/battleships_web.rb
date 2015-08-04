@@ -4,21 +4,19 @@ require 'battleships'
 class BattleshipsWeb < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
 
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   get '/new_game' do
     @visitor = params[:name]
-  #  game = Game.new Player, Board
-  #  game.player_1.shoot :coordinate
     erb :index1
   end
 
   get '/coordinate' do
     @coordinate = params[:coordinate]
-    # game = Game.new Player, Board
-    # game.player_1.shoot :coordinate
     erb :index2
   end
 

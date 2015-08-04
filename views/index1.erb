@@ -1,6 +1,6 @@
 <div>
   <% if @visitor %>
-    Hello, <%= @visitor %>!
+    <a href="/coordinate">Hello, <%= @visitor %>! Click to enter the game.</a>
   <% else %>
     <form action="/new_game">
       What's your name?

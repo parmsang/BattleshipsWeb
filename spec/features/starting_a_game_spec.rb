@@ -22,4 +22,12 @@ feature 'Starting a new game' do
    	click_on 'Submit'
    	expect(page).to have_content "Hello, !"
   end
+
+  scenario 'I am asked to enter a board coordinate' do
+    visit '/coordinate'
+    #click_link 'New Game'
+    click_on 'Submit'
+    expect(page).to have_content "Please enter board coordinate to shoot at:"
+  end
+
 end

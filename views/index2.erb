@@ -1,0 +1,11 @@
+<div>
+  <% if @visitor %>
+    Welcome in the game
+  <% else %>
+    <form action="/coordinate">
+      Please enter board coordinate to shoot at:
+      <input type="text" coordinate="coordinate">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %>
+</div>

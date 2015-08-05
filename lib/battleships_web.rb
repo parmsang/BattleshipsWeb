@@ -17,6 +17,7 @@ class BattleshipsWeb < Sinatra::Base
 
   get '/coordinate' do
     @coordinate = params[:coordinate]
+    session[:game] = Game.new Player, Board
     erb :index2
   end
 

@@ -10,17 +10,28 @@ feature 'Starting a new game' do
   scenario 'registers a name' do
     visit '/'
     click_link 'New Game'
-   	fill_in :name, with: 'Dan'
-   	click_on 'Submit'
-   	expect(page).to have_content "Hello, Dan!"
+    fill_in :name, with: 'Dan'
+    click_on 'Submit'
+    expect(page).to have_content 'Hello, Dan!'
   end
 
   scenario 'no name entered' do
-  	visit '/'
+    visit '/'
     click_link 'New Game'
-   	fill_in :name, with: ''
-   	click_on 'Submit'
-   	expect(page).to have_content "Hello, !"
+    fill_in :name, with: ''
+    click_on 'Submit'
+    expect(page).to have_content 'Hello, !'
+  end
+end
+
+feature 'playing a new game' do
+  scenario 'can see a board' do
+    game = Game.new Player, Board
+    board = game.opponent_board_view game.player_1
+    visit '/coordinate'
+    # click_link 'New Game'
+    # click_button 'Submit'
+    expect(page).to have_content board
   end
 
   scenario 'I am asked to enter a board coordinate' do
@@ -28,14 +39,13 @@ feature 'Starting a new game' do
     fill_in :name, with: 'Dave'
     click_on 'Submit'
     click_link 'Enter game'
-    expect(page).to have_content "Please enter board coordinate to shoot at:"
+    expect(page).to have_content 'Please enter board coordinate to shoot at:'
   end
 
   scenario 'should hit on the board' do
     visit '/coordinate'
     fill_in :coordinate, with: 'D4'
     click_on 'Submit'
-    expect(page).to have_content "Miss!"
+    expect(page).to have_content 'miss'
   end
-
 end

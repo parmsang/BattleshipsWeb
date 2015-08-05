@@ -50,6 +50,29 @@ feature 'playing a new game' do
     click_link 'Enter game'
     fill_in "coordinate", with: 'D4'
     click_button 'Submit'
-    expect(page).to have_content 'miss'
+    expect(page).to have_content 'miss' or 'hit'
   end
+
+  scenario 'should hit the ship' do
+    visit '/'
+    click_link 'New Game'
+    click_button 'Submit'
+    click_link 'Enter game'
+    fill_in "coordinate", with: 'E4'
+    click_button 'Submit'
+    expect(page).to have_content 'hit'
+  end
+
+  scenario 'should sink the ship' do
+    visit '/'
+    click_link 'New Game'
+    click_button 'Submit'
+    click_link 'Enter game'
+    fill_in "coordinate", with: 'E4'
+    click_button 'Submit'
+    fill_in "coordinate", with: 'F4'
+    click_button 'Submit'
+    expect(page).to have_content 'sunk'
+  end
+
 end

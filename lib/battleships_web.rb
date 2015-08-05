@@ -12,13 +12,14 @@ class BattleshipsWeb < Sinatra::Base
 
   get '/new_game' do
     @visitor = params[:name]
+    @HITS = params[:hit]
     session[:game] = Game.new Player, Board
+    session[:game].player_2.place_ship Ship.destroyer, :E4
     erb :index1
   end
 
   get '/coordinate' do
     @coordinate = params[:coordinate]
-    
     erb :index2
   end
 

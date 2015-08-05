@@ -11,16 +11,22 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/new_game' do
-    @visitor = params[:name]
-    @HITS = params[:hit]
+    @visitor1 = params[:name]
+    @visitor2 = params[:name2]
     session[:game] = Game.new Player, Board
     session[:game].player_2.place_ship Ship.destroyer, :E4
+    session[:game].player_1.place_ship Ship.destroyer, :E4
     erb :index1
   end
 
   get '/coordinate' do
     @coordinate = params[:coordinate]
     erb :index2
+  end
+
+  get '/coordinate2' do
+    @coordinate2 = params[:coordinate2]
+    erb :index3
   end
 
   # start the server if ruby file executed directly

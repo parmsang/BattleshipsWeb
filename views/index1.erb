@@ -1,11 +1,13 @@
 <div>
-  <% if @visitor %>
-    Hello, <%= @visitor %>!
-    <a href="/coordinate">Enter game</a>
+  <% if (@visitor1 or @visitor2) %>
+    Hello, <%= @visitor1 %> and <%= @visitor2 %>!
+    <a href="/coordinate">Enter Player 1 Board</a>
+    <a href="/coordinate2">Enter Player 2 Board</a>
   <% else %>
     <form action="/new_game">
       What's your name?
       <input type="text" name="name">
+      <input type="text" name="name2">
       <input type="submit" value="Submit">
     </form>
   <% end %>

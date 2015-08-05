@@ -28,24 +28,28 @@ feature 'playing a new game' do
   scenario 'can see a board' do
     game = Game.new Player, Board
     board = game.opponent_board_view game.player_1
-    visit '/coordinate'
-    # click_link 'New Game'
-    # click_button 'Submit'
+    visit '/'
+    click_link 'New Game'
+    click_button 'Submit'
+    click_link 'Enter game'
     expect(page).to have_content board
   end
 
   scenario 'I am asked to enter a board coordinate' do
     visit '/new_game'
-    fill_in :name, with: 'Dave'
-    click_on 'Submit'
+    fill_in "name", with: 'Dave'
+    click_button 'Submit'
     click_link 'Enter game'
     expect(page).to have_content 'Please enter board coordinate to shoot at:'
   end
 
   scenario 'should hit on the board' do
-    visit '/coordinate'
-    fill_in :coordinate, with: 'D4'
-    click_on 'Submit'
+    visit '/'
+    click_link 'New Game'
+    click_button 'Submit'
+    click_link 'Enter game'
+    fill_in "coordinate", with: 'D4'
+    click_button 'Submit'
     expect(page).to have_content 'miss'
   end
 end

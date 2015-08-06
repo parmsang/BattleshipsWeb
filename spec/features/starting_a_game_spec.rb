@@ -120,17 +120,37 @@ feature 'playing a new game' do
       expect(page).to have_content 'hit'
     end
 
-  #   scenario 'should sink the ship' do
-  #     visit '/'
-  #     click_link 'New Game'
-  #     click_button 'Submit'
-  #     click_link 'Enter Player 1 Board'
-  #     fill_in "coordinate", with: 'E4'
-  #     click_button 'Submit'
-  #     fill_in "coordinate", with: 'F4'
-  #     click_button 'Submit'
-  #     expect(page).to have_content 'sunk'
-  #   end
+    scenario 'should sink the ship' do
+      visit '/'
+      click_link 'New Game'
+      click_button 'Submit'
+      click_link 'Enter Player 1 Board'
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertically"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontally"
+      click_button "Submit"
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertically"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontally"
+      click_button "Submit"
+      fill_in "coordinate", with: 'a1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'b1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'b1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'c1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'c1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'd1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'd1'
+      click_button 'Submit'
+      expect(page).to have_content 'sunk'
+    end
   end
 
   feature 'player 2 playing a game' do
@@ -215,26 +235,60 @@ feature 'playing a new game' do
       expect(page).to have_content 'miss' or 'hit'
     end
 
-  #   scenario 'should hit the ship' do
-  #     visit '/'
-  #     click_link 'New Game'
-  #     click_button 'Submit'
-  #     click_link 'Enter Player 2 Board'
-  #     fill_in "coordinate2", with: 'E4'
-  #     click_button 'Submit'
-  #     expect(page).to have_content 'hit'
-  #   end
+    scenario 'should hit the ship' do
+      visit '/'
+      click_link 'New Game'
+      click_button 'Submit'
+      click_link 'Enter Player 1 Board'
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertical"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontal"
+      click_button "Submit"
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertical"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontal"
+      click_button "Submit"
+      fill_in "coordinate", with: 'E4'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'E4'
+      click_button 'Submit'
+      expect(page).to have_content 'hit'
+    end
 
-  #   scenario 'should sink the ship' do
-  #     visit '/'
-  #     click_link 'New Game'
-  #     click_button 'Submit'
-  #     click_link 'Enter Player 2 Board'
-  #     fill_in "coordinate2", with: 'E4'
-  #     click_button 'Submit'
-  #     fill_in "coordinate2", with: 'F4'
-  #     click_button 'Submit'
-  #     expect(page).to have_content 'sunk'
-  #   end
+    scenario 'should sink the ship' do
+      visit '/'
+      click_link 'New Game'
+      click_button 'Submit'
+      click_link 'Enter Player 1 Board'
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertically"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontally"
+      click_button "Submit"
+      fill_in "coordinate", with: "e4"
+      fill_in "rotation", with: "vertically"
+      fill_in "coordinate2", with: "a1"
+      fill_in "rotation2", with: "horizontally"
+      click_button "Submit"
+      fill_in "coordinate", with: 'a1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'b1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'b1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'c1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'c1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'd1'
+      click_button 'Submit'
+      fill_in "coordinate", with: 'd1'
+      click_button 'Submit'
+      fill_in "coordinate2", with: 'a1'
+      click_button 'Submit'
+      expect(page).to have_content 'sunk'
+    end
   end
 end

@@ -22,19 +22,19 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get "/p2place" do
-    session[:game].player_1.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym 
+    session[:game].player_1.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym
     session[:game].player_1.place_ship Ship.battleship, params[:coordinate2].capitalize.to_sym, params[:rotation2].to_sym
     erb :p2place
   end
 
   get '/coordinate' do
-    session[:game].player_2.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym 
+    session[:game].player_2.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym
     session[:game].player_2.place_ship Ship.battleship, params[:coordinate2].capitalize.to_sym, params[:rotation2].to_sym
     erb :coordinate
   end
 
-  post "/coordinate" do 
-    @hit = session[:game].player_2.shoot params[:coordinate2].capitalize.to_sym 
+  post "/coordinate" do
+    @hit = session[:game].player_2.shoot params[:coordinate2].capitalize.to_sym
     erb :coordinate
   end
 

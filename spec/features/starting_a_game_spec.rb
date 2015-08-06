@@ -36,9 +36,9 @@ feature 'playing a new game' do
       click_link 'Enter Player 1 Board'
       expect(page).to have_content "Where do you want to place your ship?"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content "Where do you want to place your ship?"
     end
@@ -50,14 +50,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content board
     end
@@ -68,14 +68,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content 'Please enter board coordinate to shoot at:'
     end
@@ -86,14 +86,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+        select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'D4'
       click_button 'Submit'
@@ -106,14 +106,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'E4'
       click_button 'Submit'
@@ -126,14 +126,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertically"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontally"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertically"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontally"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'a1'
       click_button 'Submit'
@@ -161,15 +161,15 @@ feature 'playing a new game' do
       click_link 'Enter Player 1 Board'
       expect(page).to have_content "Where do you want to place your ship?"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content "Where do you want to place your ship?"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+    select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content 'Please enter board coordinate to shoot at:'
     end
@@ -180,14 +180,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content board
     end
@@ -199,14 +199,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content 'Please enter board coordinate to shoot at:'
     end
@@ -218,15 +218,15 @@ feature 'playing a new game' do
       click_link 'Enter Player 1 Board'
       expect(page).to have_content "Where do you want to place your ship?"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       expect(page).to have_content "Where do you want to place your ship?"
       fill_in "coordinate", with: "E4"
-      fill_in "rotation", with: "vertical"
+      select "vertically", :from => "rotation"
       fill_in "coordinate2", with: "A1"
-      fill_in "rotation2", with: "horizontal"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'D4'
       click_button 'Submit'
@@ -241,14 +241,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
-      fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "vertically", :from => "rotation"
+      fill_in "coordinate2", with: "A1"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertical"
-      fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontal"
+      select "vertically", :from => "rotation"
+      fill_in "coordinate2", with: "A1"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'E4'
       click_button 'Submit'
@@ -263,14 +263,14 @@ feature 'playing a new game' do
       click_button 'Submit'
       click_link 'Enter Player 1 Board'
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertically"
-      fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontally"
+      select "vertically", :from => "rotation"
+      fill_in "coordinate2", with: "A1"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: "e4"
-      fill_in "rotation", with: "vertically"
-      fill_in "coordinate2", with: "a1"
-      fill_in "rotation2", with: "horizontally"
+      select "vertically", :from => "rotation"
+      fill_in "coordinate2", with: "A1"
+      select "horizontally", :from => "rotation2"
       click_button "Submit"
       fill_in "coordinate", with: 'a1'
       click_button 'Submit'

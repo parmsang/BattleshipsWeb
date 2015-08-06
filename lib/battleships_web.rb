@@ -20,12 +20,20 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/coordinate' do
-    @coordinate = params[:coordinate]
+    erb :index2
+  end
+
+  post "/coordinate" do 
+    @hit = session[:game].player_1.shoot params[:coordinate].capitalize.to_sym 
     erb :index2
   end
 
   get '/coordinate2' do
-    @coordinate2 = params[:coordinate2]
+    erb :index3
+  end
+
+  post "/coordinate2" do
+    @hit2 = session[:game].player_2.shoot params[:coordinate2].capitalize.to_sym
     erb :index3
   end
 

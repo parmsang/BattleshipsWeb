@@ -2,14 +2,14 @@
 <div>
   <pre>
     <h2> Welcome to the Game! </h2>
-<%= session[:game].opponent_board_view session[:game].player_2 %>
+<%= session[:game].opponent_board_view session[:game].player_1 %>
   </pre>
-    <form action="/coordinate">
+    <form action="/coordinate" method="post">
       Please enter board coordinate to shoot at:
       <input type="text" name="coordinate">
       <input type="submit" value="Submit">
     </form>
-     <% if @coordinate %>
-    <h3><%= session[:game].player_1.shoot @coordinate.to_sym %></h3>
-  <% end %>
+    
+    <h3><%= @hit %></h3>
+  
 </div>

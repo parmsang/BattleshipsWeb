@@ -3,7 +3,7 @@
     <h2> Welcome to the Game! </h2>
 <%= session[:game].opponent_board_view session[:game].player_2 %>
   </pre>
-    <form action="/coordinate2" method="post">
+    <form action="/coordinate" method="post">
       Please enter board coordinate to shoot at:
       <input type="text" name="coordinate2">
       <input type="submit" value="Submit">

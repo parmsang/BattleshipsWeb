@@ -1,8 +1,8 @@
 <div>
-  <% if (@visitor1 or @visitor2) %>
+  <% if (@visitor1 || @visitor2) %>
     Hello, <%= @visitor1 %> and <%= @visitor2 %>!
-    <a href="/coordinate">Enter Player 1 Board</a>
-    <a href="/coordinate2">Enter Player 2 Board</a>
+    <a href="/p1place">Enter Player 1 Board</a>
+    <a href="/p2place">Enter Player 2 Board</a>
   <% else %>
     <form action="/new_game">
       What's your name?

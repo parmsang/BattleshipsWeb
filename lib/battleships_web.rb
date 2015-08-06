@@ -14,27 +14,37 @@ class BattleshipsWeb < Sinatra::Base
     @visitor1 = params[:name]
     @visitor2 = params[:name2]
     session[:game] = Game.new Player, Board
-    session[:game].player_2.place_ship Ship.destroyer, :E4
-    session[:game].player_1.place_ship Ship.destroyer, :E4
-    erb :index1
+    erb :name
+  end
+
+  get "/p1place" do
+    erb :p1place
+  end
+
+  get "/p2place" do
+    session[:game].player_1.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym 
+    session[:game].player_1.place_ship Ship.battleship, params[:coordinate2].capitalize.to_sym, params[:rotation2].to_sym
+    erb :p2place
   end
 
   get '/coordinate' do
-    erb :index2
+    session[:game].player_2.place_ship Ship.aircraft_carrier, params[:coordinate].capitalize.to_sym, params[:rotation].to_sym 
+    session[:game].player_2.place_ship Ship.battleship, params[:coordinate2].capitalize.to_sym, params[:rotation2].to_sym
+    erb :coordinate
   end
 
   post "/coordinate" do 
-    @hit = session[:game].player_1.shoot params[:coordinate].capitalize.to_sym 
-    erb :index2
+    @hit = session[:game].player_2.shoot params[:coordinate2].capitalize.to_sym 
+    erb :coordinate
   end
 
   get '/coordinate2' do
-    erb :index3
+    erb :coordinate2
   end
 
   post "/coordinate2" do
-    @hit2 = session[:game].player_2.shoot params[:coordinate2].capitalize.to_sym
-    erb :index3
+    @hit2 = session[:game].player_1.shoot params[:coordinate].capitalize.to_sym
+    erb :coordinate2
   end
 
   # start the server if ruby file executed directly
